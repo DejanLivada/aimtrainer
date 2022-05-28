@@ -55,6 +55,8 @@ def play():
             if dogadjaj.type == pygame.MOUSEBUTTONDOWN:
                 if tacka.slika.get_rect().move(tacka.pozicija).collidepoint(dogadjaj.pos):
                     tacka.changepos()
+                    global score
+                    score += 1
             if dogadjaj.type == pygame.USEREVENT:
                 timer -= 1
 
