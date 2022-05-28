@@ -57,7 +57,6 @@ def play():
                     tacka.changepos()
                     global score
 
-                    score += 1
             if dogadjaj.type == pygame.USEREVENT:
                 timer -= 1
 
