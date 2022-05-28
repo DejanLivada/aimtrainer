@@ -41,7 +41,7 @@ pygame.time.set_timer(pygame.USEREVENT, 1000)
 font = pygame.font.SysFont("Consolas" , 30)
 gameoverfont = pygame.font.SysFont("Consolas" , 60)
 game_over_text = gameoverfont.render("Gameover" , True , (255,255,255))
-score_text = gameoverfont.render(f"Score: {score}" , True , (255,255,255))
+
 def play():
 
     global timer
@@ -56,6 +56,7 @@ def play():
                 if tacka.slika.get_rect().move(tacka.pozicija).collidepoint(dogadjaj.pos):
                     tacka.changepos()
                     global score
+
                     score += 1
             if dogadjaj.type == pygame.USEREVENT:
                 timer -= 1
@@ -80,7 +81,7 @@ def game_over():
             if dogadjaj.type == pygame.MOUSEBUTTONDOWN:
                 if play_again_dugme.slika.get_rect().move(play_again_dugme.pozicija).collidepoint(dogadjaj.pos):
                     play()
-
+        score_text = gameoverfont.render(f"Score: {score}", True, (255, 255, 255))
         prozor.fill((55, 255, 0))
         prozor.blit(game_over_text , (200 , 50))
         prozor.blit(score_text , (200 , 200))
